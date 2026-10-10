@@ -1,0 +1,91 @@
+/* =====================================================================
+   13. INTRO (tela de abertura)
+   Camada em tela cheia: o "el" entra pela esquerda, os anéis pela
+   direita, e a camada some sozinha depois de 2,4s.
+   ===================================================================== */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;               
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--fundo);
+  animation: intro-sai 0.8s ease 3.2s forwards;  
+}
+
+/* logo em duas camadas empilhadas (mesmo tamanho, alinhadas) */
+.intro-logo {
+  position: relative;
+  width: 240px;
+  aspect-ratio: 800 / 376;
+}
+
+.intro-logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.logo-el {
+  animation:el-entra  0.8s ease 1.5s forwards;
+}
+
+.logo-aneis {
+  animation:
+    aneis-entram 0.9s ease 0.2s forwards,
+    aneis-direita 0.9s ease 0.8s both;
+}
+
+
+@keyframes aneis-entram {
+  to   { opacity: 1; transform: none; }
+}
+@keyframes aneis-direita {
+from { transform: translateX(-50px); }
+  to   { transform: none; }
+}
+
+@keyframes el-entra {
+  from { transform: translateX(24px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes logo-centraliza {
+  from { transform: translate(-22.25%, -7.45%); }   /* anéis no centro */
+  to   { transform: none; }                          /* logo inteira no centro */
+}
+
+/* frase opcional embaixo da logo (só se estiver no HTML) */
+.intro-frase {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 32px);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: intro-entra 0.9s ease 0.8s forwards;
+}
+
+@keyframes intro-entra {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* visibility: hidden libera os cliques depois que a intro termina */
+@keyframes intro-sai {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    display: none;
+  }
+}

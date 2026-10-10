@@ -1,0 +1,136 @@
+/* =====================================================================
+   2. NAVBAR
+   ===================================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px var(--margem);
+  background: rgba(8, 7, 10, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--linha);
+}
+
+.navbar > a:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  width: 84px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar ul a {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--texto-suave);
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar ul a:hover {
+  color: var(--texto);
+  background-color: rgba(242, 239, 233, 0.07);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--fundo);
+  background: var(--texto);
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+@media (max-width: 1200px) {
+  .navbar ul a {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    gap: 12px;
+  }
+
+  .navbar ul a {
+    font-size: 13px;
+    padding: 8px 9px;
+  }
+
+  .nav-cta {
+    padding: 8px 14px;
+  }
+}
+
+/* tablet em pé: logo em cima, links embaixo */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 4px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+
+  .navbar ul {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navbar ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar ul a {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    justify-content: flex-start;
+  }
+
+  .nav-cta {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}

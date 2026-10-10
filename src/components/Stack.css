@@ -1,0 +1,129 @@
+#stack .destaque {
+  background: linear-gradient(90deg, var(--marca, #1238ff), var(--marca-clara, #14a0ff));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stack-grupo {
+  margin-top: 48px;
+}
+
+.stack-grupo:first-of-type {
+  margin-top: 56px;
+}
+
+.stack-grupo .rotulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* linha que acompanha o rótulo de cada grupo */
+.stack-grupo .rotulo::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--linha, rgba(255, 255, 255, 0.14));
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip {
+  --cor: #ffffff;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px 11px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--texto, #fff);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--linha, rgba(255, 255, 255, 0.14));
+  border-radius: 999px;
+  cursor: default;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chip svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--cor);
+  transition: transform 0.25s ease;
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--cor);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px -8px var(--cor);
+}
+
+.chip:hover svg {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+/* entrada suave dos chips, um depois do outro */
+.chip {
+  opacity: 0;
+  animation: chip-entrar 0.5s ease forwards;
+}
+
+.chip:nth-child(1) { animation-delay: 0.05s; }
+.chip:nth-child(2) { animation-delay: 0.1s; }
+.chip:nth-child(3) { animation-delay: 0.15s; }
+.chip:nth-child(4) { animation-delay: 0.2s; }
+.chip:nth-child(5) { animation-delay: 0.25s; }
+.chip:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes chip-entrar {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .stack-grupo {
+    margin-top: 36px;
+  }
+
+  .stack {
+    gap: 10px;
+  }
+
+  .chip {
+    padding: 9px 14px 9px 12px;
+    font-size: 13px;
+  }
+
+  .chip svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    opacity: 1;
+    animation: none;
+  }
+
+  .chip:hover,
+  .chip:hover svg {
+    transform: none;
+  }
+}

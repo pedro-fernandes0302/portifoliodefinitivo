@@ -1,0 +1,65 @@
+/* =====================================================================
+   8. PROCESSO
+   ===================================================================== */
+
+.etapas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 64px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linha);
+  border-left: 1px solid var(--linha);
+}
+
+.processo{
+  scroll-margin-top: 10px;
+}
+
+
+.etapas li {
+  padding: 32px 28px 40px;
+  border-right: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+}
+
+.etapas .num {
+  padding-top: 0;
+}
+
+.etapas h3 {
+  margin: 18px 0 10px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+
+.etapas p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--texto-suave);
+}
+
+@media (max-width: 1024px) {
+  .etapas li {
+    padding: 28px 22px 34px;
+  }
+
+  .etapas h3 {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 900px) {
+  .etapas {
+    margin-top: 48px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .etapas {
+    grid-template-columns: 1fr;
+  }
+}

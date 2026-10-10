@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+.pista {
+  height: 800vh;
+}
+
+
+.palco {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--fundo);
+}
+
+.take {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Problema {
+  margin: 0;
+  font-size: 4rem;
+  color: #ffffff;
+}
+
+.lampada-conjunto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lampada,
+.base {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.lampada {
+  color: #ffe14d;
+  min-height: 11.7em;
+}
+
+.base {
+  color: #999;
+  min-height: 6.5em;
+}
+
+.take3 {
+  color: var(--marca);
+}

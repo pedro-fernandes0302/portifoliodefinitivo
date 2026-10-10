@@ -1,0 +1,124 @@
+/* =====================================================================
+   10. EQUIPE
+   ===================================================================== */
+
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 64px;
+}
+
+.membro {
+  position: relative;
+  width: calc((100% - 60px) / 4);   /* 4 por linha */
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #1a1920;
+}
+
+.membro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(0.4);
+  transition: filter 0.4s ease, transform 0.6s ease;
+}
+
+.membro figcaption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(8, 7, 10, 0.92), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.membro figcaption strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.membro figcaption span {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--texto-suave);
+}
+
+.membro figcaption em {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--marca-clara);
+}
+
+.membro:hover img {
+  filter: none;
+  transform: scale(1.04);
+}
+
+.membro:hover figcaption {
+  opacity: 1;
+}
+
+/* celular não tem hover: nome e cargo sempre visíveis */
+@media (hover: none) {
+  .membro figcaption {
+    opacity: 1;
+  }
+
+  .membro img {
+    filter: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fotos {
+    gap: 16px;
+  }
+
+  .membro {
+    width: calc((100% - 32px) / 3);   /* 3 por linha */
+  }
+}
+
+@media (max-width: 900px) {
+  .fotos {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .membro {
+    width: calc((100% - 16px) / 2);   /* 2 por linha */
+  }
+
+  .membro figcaption {
+    padding: 14px;
+  }
+
+  .membro figcaption strong {
+    font-size: 1.15rem;
+  }
+
+  .membro figcaption span {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .membro {
+    width: 100%;
+    max-width: 320px;
+  }
+}

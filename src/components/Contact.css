@@ -1,0 +1,124 @@
+/* =====================================================================
+   11. CONTATO
+   ===================================================================== */
+
+.contato-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.contato-texto .wth-btn {
+  margin-top: 32px;
+}
+
+.form-card {
+  width: 100%;
+  background: #fff;
+  color: #111;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.form-titulo {
+  margin: 0;
+  padding: 18px 20px;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.form-corpo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* nome e e-mail lado a lado */
+.form-linha {
+  display: flex;
+  gap: 10px;
+}
+
+.form-linha input {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: none;
+}
+
+.form-card input::placeholder,
+.form-card textarea::placeholder {
+  color: #8a8a8a;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: var(--marca);
+  box-shadow: 0 0 0 3px rgba(68, 68, 173, 0.2);
+}
+
+.form-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.form-card button {
+  align-self: flex-start;
+  padding: 11px 20px;
+  background: var(--marca);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.form-card button:hover {
+  background: #5555c8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .contato-grade {
+    gap: 40px;
+  }
+}
+
+/* tablet em pé: texto em cima, formulário embaixo */
+@media (max-width: 900px) {
+  .contato-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-linha {
+    flex-direction: column;
+  }
+}

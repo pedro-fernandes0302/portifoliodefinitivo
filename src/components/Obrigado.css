@@ -1,0 +1,154 @@
+/* Obrigado.css — usa as variáveis do index.css; classes com prefixo ty- */
+
+.thank-you-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: clamp(32px, 5vw, 56px);
+  text-align: center;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(18, 56, 255, 0.22), transparent 60%),
+    var(--fundo-2);
+  border: 1px solid var(--linha);
+  border-radius: 20px;
+}
+
+.ty-icone {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--marca-clara);
+  background: rgba(18, 56, 255, 0.18);
+  border: 1px solid var(--marca);
+  animation: ty-aparecer 0.6s ease forwards;
+}
+
+/* anel que se expande uma vez, reforçando a confirmação */
+.ty-icone::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid var(--marca-clara);
+  opacity: 0;
+  animation: ty-anel 1.2s ease-out 0.5s forwards;
+}
+
+.ty-icone span {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.ty-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* nome: espaçamento leve, para caber bem no celular */
+.ty-logo span {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 24px);
+  letter-spacing: 0.04em;
+}
+
+.ty-logo small {
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.ty-titulo {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+}
+
+.ty-destaque {
+  margin: 0 0 10px;
+  font-size: 17px;
+  color: var(--texto);
+}
+
+.ty-texto {
+  max-width: 440px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--texto-suave);
+}
+
+.ty-divisor {
+  width: 48px;
+  height: 1px;
+  margin: 28px auto;
+  background: var(--linha);
+}
+
+.ty-lema {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  margin: 0 0 32px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--marca-clara);
+}
+
+@keyframes ty-aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ty-anel {
+  from {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .ty-icone {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+  }
+
+  .ty-logo {
+    margin-bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ty-icone {
+    animation: none;
+  }
+
+  .ty-icone::after {
+    display: none;
+  }
+}
