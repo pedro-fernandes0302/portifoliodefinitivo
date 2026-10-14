@@ -31,9 +31,17 @@
   display: block;
 }
 
+/* se existir uma tag nav envolvendo a lista, ela ocupa o espaço livre */
+.navbar > nav {
+  flex: 1;
+}
+
+/* a lista ocupa o espaço livre e alinha os links à esquerda */
 .navbar ul {
   display: flex;
-  gap: 4px;
+  flex: 1;
+  justify-content: center;
+  gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -52,6 +60,8 @@
 .navbar ul a:hover {
   color: var(--texto);
   background-color: rgba(242, 239, 233, 0.07);
+  transition: 1s;
+  transform: translateY(-5px);
 }
 
 .nav-cta {
@@ -95,7 +105,7 @@
   }
 }
 
-/* tablet em pé: logo em cima, links embaixo */
+/* tablet em pé: logo em cima, links embaixo (alinhados à esquerda) */
 @media (max-width: 900px) {
   .navbar {
     flex-wrap: wrap;
@@ -105,13 +115,25 @@
     padding-bottom: 8px;
   }
 
+  .navbar > nav {
+    order: 3;
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
   .navbar ul {
     order: 3;
-    width: 100%;
-    justify-content: center;
+    flex: 0 0 100%;
+    min-width: 0;
+    justify-content: flex-start;
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
+  }
+
+  .navbar > nav ul {
+    flex: none;
+    width: 100%;
   }
 
   .navbar ul::-webkit-scrollbar {
@@ -125,10 +147,6 @@
 }
 
 @media (max-width: 600px) {
-  .navbar ul {
-    justify-content: flex-start;
-  }
-
   .nav-cta {
     padding: 8px 14px;
     font-size: 12px;

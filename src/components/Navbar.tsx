@@ -1,10 +1,10 @@
 import "./Navbar.css";
 
 const links = [
-  { href: "#wwa", label: "Sobre" },
-  { href: "#servicos", label: "Serviços" },
+  { href: "#inicio", label: "Eu" },
   { href: "#Projetos", label: "Projetos" },
   { href: "#stack", label: "Stack" },
+  { href: "#wwa", label: "Sobre" },
 ];
 
 export default function Navbar() {

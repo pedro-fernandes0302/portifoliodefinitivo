@@ -91,7 +91,7 @@
 }
 
 .hero-btn-principal:hover {
-  background: #3558ff;
+  background: var(--marca-clara);
 }
 
 .hero-btn-vazio {

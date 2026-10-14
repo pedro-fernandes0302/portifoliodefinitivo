@@ -12,6 +12,10 @@
 .contato-texto .wth-btn {
   margin-top: 32px;
 }
+.contato-texto .wth-btn:hover{
+ background-color: var(--marca-clara);
+
+}
 
 .form-card {
   width: 100%;
@@ -84,7 +88,7 @@
 .form-card button {
   align-self: flex-start;
   padding: 11px 20px;
-  background: var(--marca);
+  background: #8f0000;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -96,7 +100,7 @@
 }
 
 .form-card button:hover {
-  background: #5555c8;
+  background: var(--marca-clara);
   transform: translateY(-2px);
 }
 

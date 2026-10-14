@@ -8,6 +8,40 @@ const navegar = [
   { href: "#Projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ];
+interface SocialIcon {
+  id:string;
+  href: string;
+  target?: string;
+  rel?: string;
+  "aria-label": string;
+  icon: IconType;
+}
+
+const icons: SocialIcon[] = [
+  {
+    id:"git",
+    href: "https://github.com/pedro-fernandes0302",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "GitHub",
+    icon: FaGithub,
+  },{
+  id:"email",
+  href:"mailto:pedrofernandesdejesus10@gmail.com",
+  "aria-label":"E-mail",
+  icon:FaEnvelope,
+  },
+  { 
+    id:"zap",
+    href:"https://wa.me/5562993874401",
+    target:"_blank",
+    rel:"noopener noreferrer",
+    "aria-label":"WhatsApp",
+    icon:FaWhatsapp
+  }
+];
+
+
 
 export default function Footer() {
   return (
@@ -36,28 +70,20 @@ export default function Footer() {
         <div>
           <h4>Contato</h4>
           <div className="icons">
-            <a
-              href="https://github.com/pedro-fernandes0302"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FaGithub id="git" aria-hidden="true" />
-            </a>
-            <a
-              href="mailto:pedrofernandesdejesus10@gmail.com"
-              aria-label="E-mail"
-            >
-              <FaEnvelope id="icon-email" aria-hidden="true" />
-            </a>
-            <a
-              href="https://wa.me/5562993874401"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp id="zap" aria-hidden="true" />
-            </a>
+  {icons.map((item) => {
+    const Icon = item.icon;
+
+    return (
+      <a
+        href={item.href}
+        target={item.target}
+        rel={item.rel}
+        aria-label={item["aria-label"]}
+      >
+        <Icon id={item.id} aria-hidden="true" />
+      </a>
+    );
+  })}
           </div>
         </div>
       </div>

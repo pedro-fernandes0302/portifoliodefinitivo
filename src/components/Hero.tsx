@@ -25,7 +25,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-botoes">
-            <a href="#projetos" className="hero-btn hero-btn-principal">
+            <a href="#Projetos" className="hero-btn hero-btn-principal">
               Ver projetos
             </a>
             <a

@@ -126,7 +126,7 @@ export default function Contact() {
               />
 
               {erro && (
-                <p role="alert" style={{ color: "#ff6b6b", fontSize: 14 }}>
+                <p role="alert" style={{ color: "#ff0303", fontSize: 14 }}>
                   Não consegui enviar agora. Tente de novo ou me chame no
                   WhatsApp.
                 </p>

@@ -25,12 +25,10 @@ export default function Menuhambuguer() {
 
         <menu className="menu">
             <ul>
-                <li><a href="#wwa" onClick={fechar}>Sobre</a></li>
-                <li><a href="#servicos" onClick={fechar}>Serviços</a></li>
+                <li><a href="#inicio" onClick={fechar}>Eu</a></li>
                 <li><a href="#Projetos" onClick={fechar}>Projetos</a></li>
-                <li><a href="#processo" onClick={fechar}>Processo</a></li>
                 <li><a href="#stack" onClick={fechar}>Stack</a></li>
-                <li><a href="#equipe" onClick={fechar}>Equipe</a></li>
+                <li><a href="#wwa" onClick={fechar}>Sobre</a></li>
             </ul>
         </menu>
     </div>

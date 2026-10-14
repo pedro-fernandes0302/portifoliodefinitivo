@@ -48,7 +48,7 @@
 
 .sobre-cta:hover {
   transform: translateY(-3px);
-  background: #3558ff;
+  background: var(--marca-clara);
 }
 
 @media (max-width: 900px) {
