@@ -1,6 +1,6 @@
 import { FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import "./Footer.css";
-
+import type { IconType } from "react-icons";
 const navegar = [
   { href: "#inicio", label: "Início" },
   { href: "#wwa", label: "Sobre" },
